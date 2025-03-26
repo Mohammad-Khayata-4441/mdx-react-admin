@@ -1,0 +1,16 @@
+{
+  "hello": "Hello",
+  "home": {
+    "title": "Home"
+  },
+  "products": {
+    "title": "Products"
+  },
+  "ui": {
+    "profile": "The profile"
+  },
+  "users": {
+    "title": "Users"
+  },
+  "main": "Main"
+}
