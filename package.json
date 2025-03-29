@@ -16,6 +16,7 @@
     "@hugeicons/react": "^1.0.5",
     "@mui/icons-material": "^6.4.8",
     "@mui/material": "^6.4.8",
+    "@mui/x-charts": "^7.28.0",
     "@mui/x-date-pickers": "^7.28.0",
     "@tanstack/react-router": "^1.114.27",
     "@types/stylis": "^4.2.7",
