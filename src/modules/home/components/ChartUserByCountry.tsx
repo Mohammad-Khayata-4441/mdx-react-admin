@@ -17,6 +17,7 @@ import {
   BrazilFlag,
   GlobeFlag,
 } from "../internals/components/CustomIcons";
+import { colors } from "@/libs/mui";
 
 const data = [
   { label: "India", value: 50000 },
@@ -30,25 +31,25 @@ const countries = [
     name: "India",
     value: 50,
     flag: <IndiaFlag />,
-    color: "hsl(220, 25%, 65%)",
+    color: colors.primary[100],
   },
   {
     name: "USA",
     value: 35,
     flag: <UsaFlag />,
-    color: "hsl(220, 25%, 45%)",
+    color: colors.primary[300],
   },
   {
     name: "Brazil",
     value: 10,
     flag: <BrazilFlag />,
-    color: "hsl(220, 25%, 30%)",
+    color: colors.primary[500],
   },
   {
     name: "Other",
     value: 5,
     flag: <GlobeFlag />,
-    color: "hsl(220, 25%, 20%)",
+    color: colors.primary[700],
   },
 ];
 
@@ -116,11 +117,11 @@ function PieCenterLabel({ primaryText, secondaryText }: PieCenterLabelProps) {
   );
 }
 
-const colors = [
-  "hsl(280, 60%, 65%)",
-  "hsl(280, 60%, 42%)",
-  "hsl(220, 80%, 45%)",
-  "hsl(220, 80%, 25%)",
+const chartColors = [
+  colors.primary[100],
+  colors.primary[300],
+  colors.primary[500],
+  colors.primary[700],
 ];
 
 export default function ChartUserByCountry() {
@@ -135,7 +136,7 @@ export default function ChartUserByCountry() {
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <PieChart
-            colors={colors}
+            colors={chartColors}
             margin={{
               left: 80,
               right: 80,
