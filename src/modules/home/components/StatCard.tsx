@@ -4,6 +4,9 @@ import React from "react";
 export type StatCardProps = {
   title?: string;
   value?: string;
+  data: number[];
+  trend: string;
+  interval: string;
   icon?: React.ReactNode;
   color?: (t: Theme) => string;
   description?: string;

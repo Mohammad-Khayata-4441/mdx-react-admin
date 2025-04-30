@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { ChangeEvent, KeyboardEventHandler, useState } from "react";
 import {
   Box,
   Paper,
@@ -130,7 +130,7 @@ const messageData = [
 export default function AdminChatDashboard() {
   const [newMessage, setNewMessage] = useState("");
 
-  const handleMessageChange = (event: any) => {
+  const handleMessageChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewMessage(event.target?.value);
   };
 
@@ -141,7 +141,7 @@ export default function AdminChatDashboard() {
     }
   };
 
-  const handleKeyPress = (event: KeyboardEvent) => {
+  const handleKeyPress: KeyboardEventHandler<HTMLDivElement> = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       handleSendMessage();
@@ -153,10 +153,7 @@ export default function AdminChatDashboard() {
       <Grid container sx={{ height: "100%" }}>
         {/* Conversations Column */}
         <Grid
-          item
-          xs={12}
-          md={4}
-          lg={3}
+          size={{ xs: 12, md: 4 }}
           sx={{ height: "100%", borderRight: "1px solid #e0e0e0" }}
         >
           <Paper
@@ -259,12 +256,10 @@ export default function AdminChatDashboard() {
 
         {/* Active Chat Column */}
         <Grid
-          item
-          xs={12}
-          md={8}
-          lg={9}
+          size={{ xs: 12, md: 8, lg: 9 }}
           sx={{ height: "100%", display: "flex", flexDirection: "column" }}
         >
+          1
           <Paper
             sx={{
               height: "100%",
@@ -407,7 +402,7 @@ export default function AdminChatDashboard() {
                 variant="outlined"
                 value={newMessage}
                 onChange={handleMessageChange}
-                onKeyPress={handleKeyPress}
+                onKeyUp={handleKeyPress}
                 sx={{ mx: 1 }}
                 size="small"
               />

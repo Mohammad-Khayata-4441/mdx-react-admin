@@ -7,7 +7,7 @@ import React from 'react';
  * can be used for debouncing callbacks with a specified timeout.
  */
 export const useDebounce = () => {
-  const debounceRef = React.useRef<NodeJS.Timeout>();
+  const debounceRef = React.useRef<NodeJS.Timeout>(null);
 
   const debounce = React.useCallback(
     (callback: any, timeout: number, args?: any[]) => {

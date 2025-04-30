@@ -24,11 +24,8 @@ import LocaleSelect from "../LocaleSelect";
 import { useTranslation } from "react-i18next";
 import { ColorModeContext } from "@/modules/common/hooks/useDarkMode";
 import {
-  DarkMode,
   DarkModeOutlined,
-  LightMode,
   LightModeOutlined,
-  Notifications,
   NotificationsOutlined,
   Search,
 } from "@mui/icons-material";
