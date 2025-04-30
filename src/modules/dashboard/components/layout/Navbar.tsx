@@ -20,32 +20,20 @@ import {
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 import React, { useContext } from "react";
-// import { ColorModeContext } from "@/app/hooks/useDarkMode";
 import LocaleSelect from "../LocaleSelect";
-// import BreadCrumb from "@/shared/components/navigation/BreadCrumb";
 import { useTranslation } from "react-i18next";
-import { useMatches } from "@tanstack/react-router";
 import { ColorModeContext } from "@/modules/common/hooks/useDarkMode";
 import {
   DarkMode,
+  DarkModeOutlined,
   LightMode,
+  LightModeOutlined,
   Notifications,
+  NotificationsOutlined,
   Search,
 } from "@mui/icons-material";
 import RouterBreadCumb from "../RouterBreadCumb";
-// import {
-//   CollapseRightIcon,
-//   LogoutIcon,
-//   MenuIcon,
-//   MoonIcon,
-//   NotificationsIcon,
-//   AddAccountIcon,
-//   SettingsIcon,
-//   SunIcon,
-//   SearchIcon,
-// } from "@/app/components/Icons";
-// import { useAuth } from "@/shared/hooks/useAuth";
-// import { PageMetaData } from "@/shared/types/route";
+
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
@@ -64,9 +52,6 @@ export default function Navbar({ drawerWidth, onMobileDrawerOpen }: Props) {
     setMode(mode === "dark" ? "light" : "dark");
   };
 
-  const matchedRoutes = useMatches();
-  // const { logOut } = useAuth();
-  // const { userRole } = useUserPermissions();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   // const [openSearch, setOpenSearch] = React.useState(false);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -164,11 +149,6 @@ export default function Navbar({ drawerWidth, onMobileDrawerOpen }: Props) {
                   flexWrap="wrap"
                   alignItems="center"
                 >
-                  <Typography fontWeight="bold" fontSize={24}>
-                    {matchedRoutes.filter((r) => !!r.staticData.title).pop()
-                      ?.staticData.title ?? t("dashboard.title")}
-                  </Typography>
-
                   <Box sx={{ display: { xs: "none", lg: "block" } }}>
                     <RouterBreadCumb></RouterBreadCumb>
                   </Box>
@@ -207,7 +187,11 @@ export default function Navbar({ drawerWidth, onMobileDrawerOpen }: Props) {
                       }}
                       onClick={() => toggle()}
                     >
-                      {mode === "dark" ? <LightMode /> : <DarkMode />}
+                      {mode === "dark" ? (
+                        <LightModeOutlined />
+                      ) : (
+                        <DarkModeOutlined />
+                      )}
                     </IconButton>
                     <IconButton
                     // onClick={() => setOpenSearch(true)}
@@ -231,7 +215,7 @@ export default function Navbar({ drawerWidth, onMobileDrawerOpen }: Props) {
                         badgeContent={5}
                         sx={{ width: "max-content" }}
                       >
-                        <Notifications></Notifications>
+                        <NotificationsOutlined></NotificationsOutlined>
                       </Badge>
                     </IconButton>
                   </Box>

@@ -39,7 +39,7 @@ export default function StatCard({
             {title}
           </Typography>
           <Typography fontSize={28} fontWeight="bold">
-            {Number(value).toFixed(2)}
+            {typeof value === "number" ? Number(value).toFixed(2) : value}
           </Typography>
         </Box>
 

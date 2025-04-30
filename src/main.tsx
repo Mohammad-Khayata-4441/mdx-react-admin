@@ -5,7 +5,7 @@ import "./libs/i18n";
 import "./core/stype.css";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
-import { NavigationItem } from "./modules/common/types/NavigationItem";
+// import { NavigationItem } from "./modules/common/types/NavigationItem";
 
 // Create a new router instance
 const router = createRouter({
@@ -19,7 +19,7 @@ declare module "@tanstack/react-router" {
   }
   interface StaticDataRouteOption {
     title?: string;
-    navigationLink: NavigationItem;
+    // navigationLink: NavigationItem;
   }
 }
 

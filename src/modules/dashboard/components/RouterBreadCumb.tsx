@@ -16,8 +16,9 @@ export default function RouterBreadCumb() {
               to={route.fullPath}
               underline="none"
               color={
-                match({ to: route.pathname }) ? "textDisabled" : "textPrimary"
+                match({ to: route.pathname }) ? "textPrimary" : "textDisabled"
               }
+              fontWeight={match({ to: route.pathname }) ? 600 : 400}
             >
               {route.staticData.title}
             </MuiLink>
