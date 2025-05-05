@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import HomePage from "../../modules/home/page";
 import i18n from "@/libs/i18n";
-
+import HomePage from "@/modules/dashboard/home/page";
 export const Route = createFileRoute("/_dashboard/")({
   component: RouteComponent,
   staticData: {
